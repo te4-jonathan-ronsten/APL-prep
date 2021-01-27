@@ -12,29 +12,31 @@ code {
     monospace;
 }
 
-.navbarImg {
-  margin: auto;
-  margin-left: auto;
-  width: 200px;
-  height: 45px;
-}
-
-.navbarDiv {
-  margin-left: auto;
-  width: 100px;
-  height: fit-content;
-}
-
 .mainDiv {
   background-image: url(./img/background.png);
   background-repeat: none;
   background-size: cover;
   width: auto;
+  max-width: 1000px;
   height: 50vh;
   margin: 10px;
   margin-top: 70px;
+  display: grid;
+  grid-template-columns: 60% 40%;
+  grid-template-areas: 'a b'
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .text {
   color: white;
+}
+
+.MuiListItemText-primary  {
+  font-size: 0.1rem;
+  font-weight: bold;
 }
