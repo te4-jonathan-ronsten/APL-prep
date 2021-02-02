@@ -2,6 +2,7 @@ import React from 'react';
 import NavBar from './NavBar';
 import ListComponentContainer from '../containers/ListComponentContainer';
 import { makeStyles } from '@material-ui/styles';
+import InfoBox from './InfoBox'
 
 const useStyles = makeStyles({
     p: {
@@ -18,7 +19,7 @@ const useStyles = makeStyles({
 export default function Grasroten() { 
     const classes = useStyles();
     return (
-        <div>
+        <div className='gridDiv'>
             <NavBar />
             <div className="mainDiv">
                 <div className="text" style={{gridArea: 'a'}}>
@@ -30,6 +31,7 @@ export default function Grasroten() {
                 </div>
                 <ListComponentContainer style={{gridArea: 'b'}}/>
             </div>
+            <InfoBox />
         </div>
     );  
 }

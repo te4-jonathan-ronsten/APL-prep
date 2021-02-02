@@ -1,5 +1,5 @@
-# Getting Started with Create React App
-
 ## Start project
+yarn install
 yarn start
-yarn run json-server 
+## Start backend
+yarn run json-server

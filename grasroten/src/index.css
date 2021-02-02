@@ -11,32 +11,73 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+body {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: lightgrey;
+}
+
+ol {
+  list-style: decimal;
+}
 
 .mainDiv {
   background-image: url(./img/background.png);
   background-repeat: none;
   background-size: cover;
-  width: auto;
-  max-width: 1000px;
-  height: 50vh;
-  margin: 10px;
-  margin-top: 70px;
   display: grid;
-  grid-template-columns: 60% 40%;
-  grid-template-areas: 'a b'
+  grid-template-columns: 70% 30%;
+  grid-template-areas: 'a b';
+  grid-area: z;
 }
 
-body {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.gridDiv {
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  grid-template-columns: 0em 1fr 1fr 1fr 0em;
+  grid-template-rows: 7% 55% 1fr;
+  grid-gap: 1em;
+  grid-template-areas: 
+    "header header header header header"
+    ". z z z ."
+    ". box box box ."
+  ;
+}
+
+.infoBox {
+    grid-area: box;
+    margin-bottom: 1em;
+    display: grid;
+    grid-gap: 1em;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: "box1 box2 box3";
+    font-size: large;
 }
 
 .text {
   color: white;
 }
 
-.MuiListItemText-primary  {
-  font-size: 0.1rem;
-  font-weight: bold;
+.MuiListItem-root {
+  font-size: 1rem !important;
+}
+
+.MuiTypography-body1 {
+  font-size: 1rem !important;
+}
+
+.MuiTypography-body2 {
+  font-size: 1rem !important;
+}
+
+.MuiAppBar-positionFixed {
+  position: relative !important;
+}
+
+.MuiBadge-root {
+  display: flex !important;
+  margin: auto 2rem auto auto !important;
 }
