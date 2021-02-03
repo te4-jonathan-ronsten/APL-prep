@@ -28,7 +28,7 @@ const useStyles = makeStyles({
     }
 })
 
-export default function PopUpModal(props) {
+export default function AddClubModal(props) {
     const classes = useStyles()
 
     const handleClick = () => {
@@ -44,7 +44,7 @@ export default function PopUpModal(props) {
             'points': Math.floor((Math.random() * 100000)),
             'subcategory': document.getElementById('sport').value,
             'homepage': document.getElementById('url').value
-        }
+        };
         props.addClub(newClub);
         props.changeModal();
     }

@@ -6,7 +6,7 @@ import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/styles';
 import ExpandMoreSharpIcon from '@material-ui/icons/ExpandMoreSharp';
 import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
-import PopUpModal from './Modal';
+import AddClubModal from './Modal';
 import Collapse from '@material-ui/core/Collapse';
 import ExpandLessIcon from '@material-ui/icons/ExpandLess';
 
@@ -78,11 +78,11 @@ function ListComponent(props) {
     const [showCollapse, setShowCollapse] = useState([])
     const viewMore = (element) => {
         if(showCollapse.length > 1){  //Check så man ej kan expandera fler än 2 listItems i taget, då listan blir för stor.
-            setShowCollapse([element.longname])
+            setShowCollapse([element.longname]);
         }else {
             setShowCollapse((name)=> {
                 return [...name, element.longname]
-            })
+            });
         }
     }
     
@@ -93,14 +93,14 @@ function ListComponent(props) {
     const [data, setData] = useState([]);
     useEffect(() => {
         setData(() => {
-            return props.newData.slice(0, 3)
-        })
+            return props.newData.slice(0, 3);
+        });
     }, [props.newData])
     
     const addClub = (newClub) => {
         setData((club)=> {
             return [...club, newClub]
-        })      
+        });     
     }
     
     const [showModal, setShowModal] = useState(false)
@@ -127,7 +127,9 @@ function ListComponent(props) {
                                         secondary={`${element.subcategory},  ${element.location['city']}`}
                                     />
                                     <DeleteForeverIcon style={{marginRight: '0.5rem'}} onClick={() => deleteClick(element.id)}/>
-                                    {showCollapse.includes(element.longname) ? <ExpandLessIcon style={{backgroundColor: 'lightgrey'}} onClick={() => viewLess(element.longname)}/> : <ExpandMoreSharpIcon style={{backgroundColor: 'lightgrey'}} onClick={() => viewMore(element)}/>}
+                                    {showCollapse.includes(element.longname) ? 
+                                        <ExpandLessIcon style={{backgroundColor: 'lightgrey'}} onClick={() => viewLess(element.longname)}/> 
+                                        : <ExpandMoreSharpIcon style={{backgroundColor: 'lightgrey'}} onClick={() => viewMore(element)}/>}
                                 </ListItem>
                                 <Collapse className={classes.collapse} in={showCollapse.includes(element.longname)}>
                                 <List>
@@ -154,7 +156,7 @@ function ListComponent(props) {
                 Lägg till förening
             </Button>
             {
-                (showModal === true) && <PopUpModal open={showModal} addClub={addClub} changeModal={changeModal}/>
+                (showModal === true) && <AddClubModal open={showModal} addClub={addClub} changeModal={changeModal}/>
             }
         </div>
     );

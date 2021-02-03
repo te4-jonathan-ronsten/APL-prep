@@ -13,6 +13,9 @@ const useStyles = makeStyles({
         alignItems: 'center',
         justifyContent: 'center',
         display: 'flex'
+    },
+    h2: {
+        marginLeft: '10px'
     }
 })
 
@@ -23,11 +26,11 @@ export default function Grasroten() {
             <NavBar />
             <div className="mainDiv">
                 <div className="text" style={{gridArea: 'a'}}>
-                    <h2 style={{marginLeft: '10px'}}>Hjälp oss stödja idrottens rötter</h2>
+                    <h2 className={classes.h2}>Hjälp oss stödja idrottens rötter</h2>
                     <p className={classes.p}>Inget kan blomma utan starka rötter. Därför sponsrar 
                         vi ungdomsidrotten i Sverige. Du kan hjälpa oss!
                     </p>
-                    <p style={{marginLeft: '10px'}}>Gräsroten, för ungdomsidrotten i Sverige</p>
+                    <p className={classes.p}>Gräsroten, för ungdomsidrotten i Sverige</p>
                 </div>
                 <ListComponentContainer style={{gridArea: 'b'}}/>
             </div>

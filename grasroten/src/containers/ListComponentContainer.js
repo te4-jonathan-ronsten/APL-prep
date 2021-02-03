@@ -3,11 +3,11 @@ import ListComponent from '../components/ListComponent';
 
 export default function ListComponentContainer()  {
     
-    const [data, setData] = useState([])
+    const [data, setData] = useState([]);
     useEffect(() => { 
         async function getData() {
-            const respons = await fetch('http://localhost:8080/foreningar')
-            const realData = await respons.json();
+            const response = await fetch('http://localhost:8080/foreningar');
+            const realData = await response.json();
             setData(realData);
         }
         getData();
