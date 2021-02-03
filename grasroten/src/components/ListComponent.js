@@ -129,7 +129,8 @@ function ListComponent(props) {
                                     <DeleteForeverIcon style={{marginRight: '0.5rem'}} onClick={() => deleteClick(element.id)}/>
                                     {showCollapse.includes(element.longname) ? 
                                         <ExpandLessIcon style={{backgroundColor: 'lightgrey'}} onClick={() => viewLess(element.longname)}/> 
-                                        : <ExpandMoreSharpIcon style={{backgroundColor: 'lightgrey'}} onClick={() => viewMore(element)}/>}
+                                        : <ExpandMoreSharpIcon style={{backgroundColor: 'lightgrey'}} onClick={() => viewMore(element)}/>
+                                    }
                                 </ListItem>
                                 <Collapse className={classes.collapse} in={showCollapse.includes(element.longname)}>
                                 <List>
